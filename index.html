@@ -1,24 +1,77 @@
-<html>
+<html lang="en">
 <head>
-<title>HTML Tutorial</title>
-</head>
+<title>Find Nearby Banks & ATMs</title>
 <style>
-//body {background-color: powderblue;}
-//h1   {color: blue;}
-//p    {color: red;}
+body {
+background-color: #ffffff;
+color: #333333;
+font-family: 'Segoe UI', sans-serif;
+}
+
+.intro-section
+{
+padding: 60px 20px;
+text-align: center;
+background-color: #fffbe6;
+border-bottom: 3px solid #ffdd44;
+}
+
+h1{
+color: #ffc107;
+font-weight: 700;
+}
+
+.lead {
+color: #666666;
+}
+.search-bar {
+max-width:500px;
+margin: 0 auto;
+}
+.btn-primary {
+background-color: #ffc107;
+border-color:  #ffc107;
+color: #000;
+}
+.btn-primary:hover {
+background-color: #ffca2c;
+border-color:  #ffca2c;
+color: #000;
+}
+
+#result {
+padding: 20px;
+background-color: #fffde7;
+border-radius: 10px;
+max-width: 700px;
+bow-shadow: 0 0 10px rgba(0,0,0,0.05)
 </style>
+</head>
 <body>
-<div>
+<div class="container">
+<div class="intro-section">
 <h1>Find nearby banks and ATMs</h1>
-<p>Quickly locate the nearest banks in your area</p>
+<p class="lead mb-4">Quickly locate the nearest banks in your area</p>
+<div class="search-bar">
 <label for="Address">Location:</label><br>
-<input type="text" id="searchInput" name="searchInput" placeholder="Enter your city or address:">
+<input type="text" id="searchInput" name="searchInput" placeholder="Enter your city or address:"></input>
 <button class="btnMain" onclick="handleSearch()">Search</button>
-//testtesttest
+</div>
+</div>
+<div id="result"></div>
 </div>
 <script>
-document.getElementById("demo").innerHTML = "My First JavaScript";
+function handleSearch() {
+const query = document.getElementById("searchInput").value.trim();
+const resultDiv = document.getElementByID("result");
+if (query){ resultDiv.innerHTML = <p
+class="text-danger">Please enter a location to search.</p>;
+return;
+}
+resultDiv.innerHTML = <h4 class="text-warning">Results for: <strong>${query}</strong></h4>
+<p class="text-muted">[zatím nic...]</p>
+;
+}
 </script>
-</input>
 </body>
 </html>
